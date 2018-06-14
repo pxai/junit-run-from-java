@@ -1,0 +1,6 @@
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/RunJUnit5TestsTest.java
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/listnode/junit5/ListNodeTest.java
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/listnode/junit5/SwapNodesTest.java
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/listnode/junit5/RemovedNthElementTest.java
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/listnode/junit5/MergeListsTest.java
+/home/pello/workspace/applicationtesting/src/test/java/com/baeldung/junit/applicationtesting/listnode/junit5/RotateListTest.java
