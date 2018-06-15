@@ -3,6 +3,7 @@ package com.baeldung.junit.applicationtesting.junit4;
 
 import junit.extensions.ActiveTestSuite;
 import junit.extensions.RepeatedTest;
+import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 import org.junit.runner.JUnitCore;
@@ -10,7 +11,7 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runners.Suite;
 
-public class RunJUnit4Tests {
+public class RunJUnit4Tests extends TestCase {
 
     public static void runOne () {
         junit.textui.TestRunner.run(new TestSuite(MergeListsTest.class));
