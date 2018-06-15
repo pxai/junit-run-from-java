@@ -1,4 +1,4 @@
-package com.baeldung.junit.applicationtesting.listnode.junit5;
+package com.baeldung.junit.applicationtesting.junit5;
 import com.baeldung.junit.applicationtesting.listnode.ListNode;
 
 import static org.junit.jupiter.api.Assertions.*;

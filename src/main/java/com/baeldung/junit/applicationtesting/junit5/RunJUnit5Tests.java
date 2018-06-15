@@ -15,13 +15,12 @@ import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
+import com.baeldung.junit.applicationtesting.junit4.ListNodeTest;
+
 public class RunJUnit5Tests {
     SummaryGeneratingListener listener =  new SummaryGeneratingListener();
+
     public void runAll() {
-//        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
-//            .selectors(selectPackage("com.baeldung.junit.applicationtesting.junit5"), selectClass(ListNodeTest.class))
-//            .filters(includeClassNamePatterns(".*Tests"))
-//            .build();
 
        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
             .selectors(
@@ -48,6 +47,7 @@ public class RunJUnit5Tests {
         // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
         RunJUnit5Tests runner = new RunJUnit5Tests();
         runner.runAll();
+
         TestExecutionSummary summary = runner.listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
         System.out.println("Hello World!");
