@@ -18,16 +18,13 @@ import org.junit.platform.launcher.listeners.TestExecutionSummary;
 import com.baeldung.junit.applicationtesting.junit4.ListNodeTest;
 
 public class RunJUnit5Tests {
-    SummaryGeneratingListener listener =  new SummaryGeneratingListener();
+    SummaryGeneratingListener listener = new SummaryGeneratingListener();
 
     public void runAll() {
 
-       LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
-            .selectors(
-                    selectPackage("com.baeldung.junit.applicationtesting.junit5") 
-            ) .filters(
-                includeClassNamePatterns(".*Test")
-                )
+        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
+            .selectors(selectPackage("com.baeldung.junit.applicationtesting.junit5"))
+            .filters(includeClassNamePatterns(".*Test"))
             .build();
         Launcher launcher = LauncherFactory.create();
 
@@ -43,7 +40,7 @@ public class RunJUnit5Tests {
 
     public static void main(String[] args) {
         // check:https://junit.org/junit5/docs/current/user-guide/#launcher-api
-        //https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
+        // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
         // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
         RunJUnit5Tests runner = new RunJUnit5Tests();
         runner.runAll();
