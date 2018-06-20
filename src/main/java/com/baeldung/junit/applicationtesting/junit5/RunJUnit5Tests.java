@@ -39,9 +39,6 @@ public class RunJUnit5Tests {
     }
 
     public static void main(String[] args) {
-        // check:https://junit.org/junit5/docs/current/user-guide/#launcher-api
-        // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
-        // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle-engines-configure
         RunJUnit5Tests runner = new RunJUnit5Tests();
         runner.runAll();
 
