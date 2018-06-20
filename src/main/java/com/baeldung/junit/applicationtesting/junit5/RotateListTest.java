@@ -20,12 +20,12 @@ class RotateListTest {
     }
 
     @Test
-    void testRotateRight() {
+    void whenRotatingListTwice_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 2).toString(),"15->3->42->666");
     }
 
     @Test
-    void testRotateRight2() {
+    void whenRotatingListThreeTimes_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 3).toString(),"666->15->3->42");
     }
 }

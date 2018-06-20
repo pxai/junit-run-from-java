@@ -21,12 +21,12 @@ class RemovedNthElementTest {
     }
 
     @Test
-    void testRemoveNthFromEnd() {
+    void whenRemovingSecondElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,2).toString(),"42->666->3");
     }
 
     @Test
-    void testRemoveNthFromEnd2() {
+    void whenRemovingThirdElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,3).toString(),"42->15->3");
     }
 }

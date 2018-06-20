@@ -29,8 +29,7 @@ public class RunJUnit5Tests {
         Launcher launcher = LauncherFactory.create();
 
         TestPlan testPlan = launcher.discover(request);
-        System.out.println(testPlan.toString());
-        System.out.println("TEsts: " + testPlan.containsTests());
+        System.out.println("Tests: " + testPlan.containsTests());
 
         launcher.registerTestExecutionListeners(listener);
 
@@ -44,6 +43,5 @@ public class RunJUnit5Tests {
 
         TestExecutionSummary summary = runner.listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
-        System.out.println("Hello World!");
     }
 }

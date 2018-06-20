@@ -15,14 +15,14 @@ class ListNodeTest {
     }
 
     @Test
-    void testListNodeIntListNode() {
+    void whenInitSimpleList_thenGettersGiveExpectedValues() {
         ListNode listNode = new ListNode(42, new ListNode(666, null));
         assertEquals(listNode.getValue(), 42);
         assertEquals(listNode.getNext().getValue(), 666);
     }
 
     @Test
-    void testToString() {
+    void whenConvertingListToString_thenGetExpectedValue() {
         ListNode listNode = new ListNode(42, new ListNode(666, new ListNode(15, null)));
         assertEquals(listNode.toString(), "42->666->15");
     }

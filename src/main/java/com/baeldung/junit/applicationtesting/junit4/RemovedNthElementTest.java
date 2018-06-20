@@ -3,6 +3,8 @@ package com.baeldung.junit.applicationtesting.junit4;
 
 import com.baeldung.junit.applicationtesting.listnode.RemovedNthElement;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Test;
 import junit.framework.TestCase;
 
@@ -23,12 +25,12 @@ class RemovedNthElementTest  extends TestCase {
     }
 
     @Test
-    void testRemoveNthFromEnd() {
+    void whenRemovingSecondElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,2).toString(),"42->666->3");
     }
 
     @Test
-    void testRemoveNthFromEnd2() {
+    void whenRemovingThirdElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,3).toString(),"42->15->3");
     }
 }

@@ -1,5 +1,7 @@
 package com.baeldung.junit.applicationtesting.junit4;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Test;
 import junit.framework.TestCase;
 
@@ -19,12 +21,12 @@ class RotateListTest  extends TestCase {
     }
 
     @Test
-    void testRotateRight() {
+    void whenRotatingListTwice_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 2).toString(),"15->3->42->666");
     }
 
     @Test
-    void testRotateRight2() {
+    void whenRotatingListThreeTimes_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 3).toString(),"666->15->3->42");
     }
 }
