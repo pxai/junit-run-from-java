@@ -21,12 +21,12 @@ class RotateListTest  extends TestCase {
     }
 
     @Test
-    void whenRotatingListTwice_thenReturnExpectedList() {
+    public void whenRotatingListTwice_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 2).toString(),"15->3->42->666");
     }
 
     @Test
-    void whenRotatingListThreeTimes_thenReturnExpectedList() {
+    public void whenRotatingListThreeTimes_thenReturnExpectedList() {
        assertEquals(rotateList.rotateRight(listNode, 3).toString(),"666->15->3->42");
     }
 }

@@ -9,7 +9,7 @@ import junit.framework.TestSuite;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import org.junit.runners.Suite;
+
 
 public class RunJUnit4Tests extends TestCase {
 
@@ -52,8 +52,10 @@ public class RunJUnit4Tests extends TestCase {
     public static void runRepeatedTestMethod () {
         TestSuite mySuite = new ActiveTestSuite( );
         
-        mySuite.addTest(new RepeatedTest(new MergeListsTest("testListNodeIntListNode"),50));
-        mySuite.addTest(new RepeatedTest(new MergeListsTest("testToString"),10));
+        mySuite.addTest(new RepeatedTest(
+            new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"),50));
+        mySuite.addTest(new RepeatedTest(
+            new MergeListsTest("whenMergingNullLists_thenGetNull"),10));
 
         junit.textui.TestRunner.run(mySuite);
     }

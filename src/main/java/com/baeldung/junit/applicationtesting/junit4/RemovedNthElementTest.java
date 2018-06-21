@@ -25,12 +25,12 @@ class RemovedNthElementTest  extends TestCase {
     }
 
     @Test
-    void whenRemovingSecondElement_thenReturnExpectedList() {
+    public void whenRemovingSecondElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,2).toString(),"42->666->3");
     }
 
     @Test
-    void whenRemovingThirdElement_thenReturnExpectedList() {
+    public void whenRemovingThirdElement_thenReturnExpectedList() {
        assertEquals(removedNthElement.removeNthFromEnd(listNode,3).toString(),"42->15->3");
     }
 }

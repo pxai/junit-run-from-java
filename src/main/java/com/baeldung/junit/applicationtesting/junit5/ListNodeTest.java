@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class ListNodeTest {
 
     @Test
-    void testListNodeInt() {
+    void whenListHasOneElement_thenGetExpectedValue() {
         ListNode listNode = new ListNode(42);
         assertEquals(listNode.getValue(), 42);
     }

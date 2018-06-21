@@ -20,6 +20,23 @@ import com.baeldung.junit.applicationtesting.junit4.ListNodeTest;
 public class RunJUnit5Tests {
     SummaryGeneratingListener listener = new SummaryGeneratingListener();
 
+    public void runOne() {
+
+        LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
+            .selectors(selectClass("com.baeldung.junit.applicationtesting.junit5.RotateListTest"))
+            .build();
+        Launcher launcher = LauncherFactory.create();
+
+        TestPlan testPlan = launcher.discover(request);
+        System.out.println("Tests for one: " + testPlan.containsTests());
+
+        launcher.registerTestExecutionListeners(listener);
+
+        launcher.execute(request);
+
+    }
+
+    
     public void runAll() {
 
         LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
@@ -36,12 +53,16 @@ public class RunJUnit5Tests {
         launcher.execute(request);
 
     }
-
     public static void main(String[] args) {
         RunJUnit5Tests runner = new RunJUnit5Tests();
         runner.runAll();
 
         TestExecutionSummary summary = runner.listener.getSummary();
+        summary.printTo(new PrintWriter(System.out));
+        
+        runner.runOne();
+
+        summary = runner.listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
     }
 }

@@ -1,8 +1,5 @@
 package com.baeldung.junit.applicationtesting.junit4;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-
 import org.junit.Test;
 import junit.framework.TestCase;
 
@@ -29,13 +26,13 @@ public class MergeListsTest extends TestCase {
     }
 
     @Test
-    void whenMergingNormalLists_thenGetExpectedString() {
+    public void whenMergingNormalLists_thenGetExpectedString() {
         assertEquals(mergeLists.merge(listNode1, listNode2)
             .toString(), "1->2->3->4->5->6->7->8");
     }
 
     @Test
-    void whenMergingNullLists_thenGetNull() {
+    public void whenMergingNullLists_thenGetNull() {
         listNode1 = null;
         listNode2 = null;
         assertNull(mergeLists.merge(listNode1, listNode2));

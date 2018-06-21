@@ -19,7 +19,7 @@ class SwapNodesTest extends TestCase {
     }
 
     @Test
-    void whenSwappingPairs_thenReturnExpectedList() {
+    public void whenSwappingPairs_thenReturnExpectedList() {
         assertEquals(swapNodes.swapPairs(listNode)
             .toString(), "666->42->3->15");
     }
