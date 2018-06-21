@@ -1,61 +1,66 @@
 package com.baeldung.junit.applicationtesting.junit4;
 
-
 import junit.extensions.ActiveTestSuite;
 import junit.extensions.RepeatedTest;
-import junit.framework.TestCase;
+import org.junit.extensions.cpsuite.ClasspathSuite;
+import static org.junit.extensions.cpsuite.SuiteType.*;
 import junit.framework.TestSuite;
 
+import org.junit.extensions.cpsuite.ClasspathSuite.SuiteTypes;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
+import org.junit.runner.RunWith;
 import org.junit.runner.notification.Failure;
 
+@RunWith(ClasspathSuite.class)
+@SuiteTypes({ TEST_CLASSES })
+public class RunJUnit4Tests {
 
-public class RunJUnit4Tests extends TestCase {
-
-    public static void runOne () {
+    public static void runOne() {
         junit.textui.TestRunner.run(new TestSuite(MergeListsTest.class));
     }
-    
-    public static void runAllClasses () {
-        Result result = JUnitCore.runClasses(ListNodeTest.class);
 
-        for (Failure failure : result.getFailures()) {
-           System.out.println(failure.toString());
-        }
-                  
-        System.out.println(resultReport(result));
-    }
-    
-    public static void runSuiteOfClasses () {        
-        Result result = JUnitCore.runClasses(MyTestSuite.class);
-        
+    public static void runAllClasses() {
+        Result result = JUnitCore.runClasses(RunJUnit4Tests.class);
+
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString());
-         }
-                   
-         System.out.println(resultReport(result));
+        }
+
+        System.out.println(resultReport(result));
+    }
+
+    public static void runSuiteOfClasses() {
+        Result result = JUnitCore.runClasses(MyTestSuite.class);
+
+        for (Failure failure : result.getFailures()) {
+            System.out.println(failure.toString());
+        }
+
+        System.out.println(resultReport(result));
 
     }
-    
+
     public static String resultReport(Result result) {
-        return "Finished. Result " + ". Failures: " + result.getFailureCount()
-        + ". Ignored: " + result.getIgnoreCount() + ". Tests runt: "
-        + result.getRunCount() + ". Time: " + result.getRunTime() + "ms.";
+        return "Finished. Result " + ". Failures: " + 
+                result.getFailureCount() + ". Ignored: " +
+                result.getIgnoreCount() + ". Tests runt: " + 
+                result.getRunCount() + ". Time: " + 
+                result.getRunTime() + "ms.";
     }
-    
-    public static void runRepeated () {
-        RepeatedTest repeatedTest = new RepeatedTest(new TestSuite(MergeListsTest.class),5);
+
+    public static void runRepeated() {
+        RepeatedTest repeatedTest = new RepeatedTest(new TestSuite(MergeListsTest.class), 5);
         junit.textui.TestRunner.run(repeatedTest);
     }
-    
-    public static void runRepeatedTestMethod () {
-        TestSuite mySuite = new ActiveTestSuite( );
-        
+
+    public static void runRepeatedTestMethod() {
+        TestSuite mySuite = new ActiveTestSuite();
+
         mySuite.addTest(new RepeatedTest(
-            new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"),50));
+            new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"), 50));
         mySuite.addTest(new RepeatedTest(
-            new MergeListsTest("whenMergingNullLists_thenGetNull"),10));
+            new MergeListsTest("twhenMergingNullLists_thenGetNull"), 10));
 
         junit.textui.TestRunner.run(mySuite);
     }
@@ -63,18 +68,19 @@ public class RunJUnit4Tests extends TestCase {
     public static void main(String[] args) {
         System.out.println("\nRunning one test class:");
         runOne();
-        
+
         System.out.println("\nRunning all test classes:");
         runAllClasses();
-        
+
         System.out.println("\nRunning a suite of test classes:");
         runSuiteOfClasses();
-        
+
         System.out.println("\nRunning repeated tests:");
         runRepeated();
-        
+
         System.out.println("\nRunning repeated tests on specific test methods:");
         runRepeatedTestMethod();
-        
+
     }
+
 }
