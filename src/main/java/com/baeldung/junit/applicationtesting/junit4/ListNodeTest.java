@@ -2,7 +2,6 @@ package com.baeldung.junit.applicationtesting.junit4;
 
 import com.baeldung.junit.applicationtesting.listnode.ListNode;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 import junit.framework.TestCase;

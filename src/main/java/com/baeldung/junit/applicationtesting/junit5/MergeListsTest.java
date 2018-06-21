@@ -5,6 +5,7 @@ import com.baeldung.junit.applicationtesting.listnode.ListNode;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import com.baeldung.junit.applicationtesting.listnode.MergeLists;
@@ -22,13 +23,13 @@ class MergeListsTest {
         listNode2 = new ListNode(1, new ListNode(3, new ListNode(5, new ListNode(7,null))));
     }
 
-    @Test
+    @RepeatedTest(10)
     void whenMergingNormalLists_thenGetExpectedString() {
         assertEquals(mergeLists.merge(listNode1, listNode2)
             .toString(), "1->2->3->4->5->6->7->8");
     }
 
-    @Test
+    @RepeatedTest(5)
     void whenMergingNullLists_thenGetNull() {
         listNode1 = null;
         listNode2 = null;
