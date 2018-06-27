@@ -36,7 +36,6 @@ public class RunJUnit5Tests {
 
     }
 
-    
     public void runAll() {
 
         LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
@@ -53,13 +52,14 @@ public class RunJUnit5Tests {
         launcher.execute(request);
 
     }
+
     public static void main(String[] args) {
         RunJUnit5Tests runner = new RunJUnit5Tests();
         runner.runAll();
 
         TestExecutionSummary summary = runner.listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
-        
+
         runner.runOne();
 
         summary = runner.listener.getSummary();

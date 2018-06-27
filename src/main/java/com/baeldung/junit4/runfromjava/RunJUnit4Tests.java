@@ -43,7 +43,7 @@ public class RunJUnit4Tests {
 
     public static String resultReport(Result result) {
         return "Finished. Result " + ". Failures: " + 
-                result.getFailureCount() + ". Ignored: " +
+                result.getFailureCount() + ". Ignored: " + 
                 result.getIgnoreCount() + ". Tests runt: " + 
                 result.getRunCount() + ". Time: " + 
                 result.getRunTime() + "ms.";
@@ -57,10 +57,8 @@ public class RunJUnit4Tests {
     public static void runRepeatedTestMethod() {
         TestSuite mySuite = new ActiveTestSuite();
 
-        mySuite.addTest(new RepeatedTest(
-            new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"), 50));
-        mySuite.addTest(new RepeatedTest(
-            new MergeListsTest("twhenMergingNullLists_thenGetNull"), 10));
+        mySuite.addTest(new RepeatedTest(new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"), 50));
+        mySuite.addTest(new RepeatedTest(new MergeListsTest("twhenMergingNullLists_thenGetNull"), 10));
 
         junit.textui.TestRunner.run(mySuite);
     }
