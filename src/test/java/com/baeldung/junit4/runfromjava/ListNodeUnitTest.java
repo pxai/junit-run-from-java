@@ -16,7 +16,7 @@ public class ListNodeUnitTest extends TestCase {
     }
 
     @Test
-    public void testwhenListHasOneElement_thenGetExpectedValue() {
+    public void whenListHasOneElement_thenGetExpectedValue() {
         ListNode listNode = new ListNode(42);
         assertEquals(listNode.getValue(), 42);
     }
