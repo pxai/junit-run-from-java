@@ -8,14 +8,12 @@ import java.io.PrintWriter;
 
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
-import org.junit.platform.launcher.TestExecutionListener;
 import org.junit.platform.launcher.TestPlan;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
-import com.baeldung.junit4.runfromjava.ListNodeTest;
 
 public class RunJUnit5Tests {
     SummaryGeneratingListener listener = new SummaryGeneratingListener();
@@ -23,7 +21,7 @@ public class RunJUnit5Tests {
     public void runOne() {
 
         LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
-            .selectors(selectClass("com.baeldung.junit5.runfromjava.RotateListTest"))
+            .selectors(selectClass("com.baeldung.junit5.runfromjava.RotateListUnitTest"))
             .build();
         Launcher launcher = LauncherFactory.create();
 

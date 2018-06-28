@@ -17,7 +17,7 @@ import org.junit.runner.notification.Failure;
 public class RunJUnit4Tests {
 
     public static void runOne() {
-        junit.textui.TestRunner.run(new TestSuite(MergeListsTest.class));
+        junit.textui.TestRunner.run(new TestSuite(MergeListsUnitTest.class));
     }
 
     public static void runAllClasses() {
@@ -50,15 +50,15 @@ public class RunJUnit4Tests {
     }
 
     public static void runRepeated() {
-        RepeatedTest repeatedTest = new RepeatedTest(new TestSuite(MergeListsTest.class), 5);
+        RepeatedTest repeatedTest = new RepeatedTest(new TestSuite(MergeListsUnitTest.class), 5);
         junit.textui.TestRunner.run(repeatedTest);
     }
 
     public static void runRepeatedTestMethod() {
         TestSuite mySuite = new ActiveTestSuite();
 
-        mySuite.addTest(new RepeatedTest(new MergeListsTest("whenMergingNormalLists_thenGetExpectedString"), 50));
-        mySuite.addTest(new RepeatedTest(new MergeListsTest("twhenMergingNullLists_thenGetNull"), 10));
+        mySuite.addTest(new RepeatedTest(new MergeListsUnitTest("whenMergingNormalLists_thenGetExpectedString"), 50));
+        mySuite.addTest(new RepeatedTest(new MergeListsUnitTest("twhenMergingNullLists_thenGetNull"), 10));
 
         junit.textui.TestRunner.run(mySuite);
     }

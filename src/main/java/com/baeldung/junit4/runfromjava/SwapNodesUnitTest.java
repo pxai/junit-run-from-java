@@ -7,14 +7,14 @@ import com.baeldung.junit.runfromjava.listnode.SwapNodes;
 
 import junit.framework.TestCase;
 
-class SwapNodesTest extends TestCase {
+class SwapNodesUnitTest extends TestCase {
     private SwapNodes swapNodes;
     private ListNode listNode;
 
-    public SwapNodesTest() {
+    public SwapNodesUnitTest() {
     }
 
-    public SwapNodesTest(String name) {
+    public SwapNodesUnitTest(String name) {
         super(name);
     }
 

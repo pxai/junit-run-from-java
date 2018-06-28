@@ -1,31 +1,36 @@
-package com.baeldung.junit5.runfromjava;
+package com.baeldung.junit4.runfromjava;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 import com.baeldung.junit.runfromjava.listnode.RotateList;
 
-class RotateListTest {
+import junit.framework.TestCase;
+
+class RotateListUnitTest extends TestCase {
     private RotateList rotateList;
     private ListNode listNode;
 
-    @BeforeEach
-    void setUp() throws Exception {
+    public RotateListUnitTest() {
+    }
+
+    public RotateListUnitTest(String name) {
+        super(name);
+    }
+
+    public void setUp() throws Exception {
         rotateList = new RotateList();
         listNode = new ListNode(42, new ListNode(666, new ListNode(15, new ListNode(3, null))));
     }
 
     @Test
-    void whenRotatingListTwice_thenReturnExpectedList() {
+    public void whenRotatingListTwice_thenReturnExpectedList() {
         assertEquals(rotateList.rotateRight(listNode, 2)
             .toString(), "15->3->42->666");
     }
 
     @Test
-    void whenRotatingListThreeTimes_thenReturnExpectedList() {
+    public void whenRotatingListThreeTimes_thenReturnExpectedList() {
         assertEquals(rotateList.rotateRight(listNode, 3)
             .toString(), "666->15->3->42");
     }

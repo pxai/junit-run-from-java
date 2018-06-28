@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 import com.baeldung.junit.runfromjava.listnode.SwapNodes;
 
-class SwapNodesTest {
+class SwapNodesUnitTest {
     private SwapNodes swapNodes;
     private ListNode listNode;
 

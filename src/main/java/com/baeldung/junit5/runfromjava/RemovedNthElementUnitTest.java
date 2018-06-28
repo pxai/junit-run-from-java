@@ -1,37 +1,32 @@
-package com.baeldung.junit4.runfromjava;
+package com.baeldung.junit5.runfromjava;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 import com.baeldung.junit.runfromjava.listnode.RemovedNthElement;
 
-import junit.framework.TestCase;
-
-class RemovedNthElementTest extends TestCase {
+class RemovedNthElementUnitTest {
 
     private ListNode listNode;
     private RemovedNthElement removedNthElement;
 
-    public RemovedNthElementTest() {
-    }
-
-    public RemovedNthElementTest(String name) {
-        super(name);
-    }
-
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() throws Exception {
         removedNthElement = new RemovedNthElement();
         listNode = new ListNode(42, new ListNode(666, new ListNode(15, new ListNode(3, null))));
     }
 
     @Test
-    public void whenRemovingSecondElement_thenReturnExpectedList() {
+    void whenRemovingSecondElement_thenReturnExpectedList() {
         assertEquals(removedNthElement.removeNthFromEnd(listNode, 2)
             .toString(), "42->666->3");
     }
 
     @Test
-    public void whenRemovingThirdElement_thenReturnExpectedList() {
+    void whenRemovingThirdElement_thenReturnExpectedList() {
         assertEquals(removedNthElement.removeNthFromEnd(listNode, 3)
             .toString(), "42->15->3");
     }
