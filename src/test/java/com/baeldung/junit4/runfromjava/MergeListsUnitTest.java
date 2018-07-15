@@ -5,21 +5,16 @@ import org.junit.Test;
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 import com.baeldung.junit.runfromjava.listnode.MergeLists;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
+import org.junit.Before;
 
-public class MergeListsUnitTest extends TestCase {
+public class MergeListsUnitTest {
 
     private ListNode listNode1;
     private ListNode listNode2;
     private MergeLists mergeLists;
 
-    public MergeListsUnitTest() {
-    }
-
-    public MergeListsUnitTest(String name) {
-        super(name);
-    }
-
+    @Before
     public void setUp() throws Exception {
         mergeLists = new MergeLists();
         listNode1 = new ListNode(2, new ListNode(4, new ListNode(6, new ListNode(8, null))));

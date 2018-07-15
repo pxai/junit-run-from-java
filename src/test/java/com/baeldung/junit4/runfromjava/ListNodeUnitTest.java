@@ -4,15 +4,12 @@ import org.junit.Test;
 
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class ListNodeUnitTest extends TestCase {
+
+public class ListNodeUnitTest  {
 
     public ListNodeUnitTest() {
-    }
-
-    public ListNodeUnitTest(String name) {
-        super(name);
     }
 
     @Test
@@ -22,7 +19,7 @@ public class ListNodeUnitTest extends TestCase {
     }
 
     @Test
-    public void testwhenInitSimpleList_thenGettersGiveExpectedValues() {
+    public void whenInitSimpleList_thenGettersGiveExpectedValues() {
         ListNode listNode = new ListNode(42, new ListNode(666, null));
         assertEquals(listNode.getValue(), 42);
         assertEquals(listNode.getNext()
@@ -30,7 +27,7 @@ public class ListNodeUnitTest extends TestCase {
     }
 
     @Test
-    public void testwhenConvertingListToString_thenGetExpectedValue() {
+    public void whenConvertingListToString_thenGetExpectedValue() {
         ListNode listNode = new ListNode(42, new ListNode(666, new ListNode(15, null)));
         assertEquals(listNode.toString(), "42->666->15");
     }

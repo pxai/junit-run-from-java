@@ -57,8 +57,8 @@ public class RunJUnit4Tests {
     public static void runRepeatedTestMethod() {
         TestSuite mySuite = new ActiveTestSuite();
 
-        mySuite.addTest(new RepeatedTest(new MergeListsUnitTest("whenMergingNormalLists_thenGetExpectedString"), 50));
-        mySuite.addTest(new RepeatedTest(new MergeListsUnitTest("whenMergingNullLists_thenGetNull"), 10));
+       mySuite.addTest(new RepeatedTest(new TestSuite(MergeListsUnitTest.class), 50));
+       mySuite.addTest(new RepeatedTest(new MergeListsUnitTest("whenMergingNullLists_thenGetNull"), 10));
 
         junit.textui.TestRunner.run(mySuite);
     }

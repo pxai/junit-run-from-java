@@ -5,19 +5,18 @@ import org.junit.Test;
 import com.baeldung.junit.runfromjava.listnode.ListNode;
 import com.baeldung.junit.runfromjava.listnode.RotateList;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
+import org.junit.Before;
 
-public class RotateListUnitTest extends TestCase {
+public class RotateListUnitTest  {
     private RotateList rotateList;
     private ListNode listNode;
 
     public RotateListUnitTest() {
     }
 
-    public RotateListUnitTest(String name) {
-        super(name);
-    }
 
+    @Before
     public void setUp() throws Exception {
         rotateList = new RotateList();
         listNode = new ListNode(42, new ListNode(666, new ListNode(15, new ListNode(3, null))));
