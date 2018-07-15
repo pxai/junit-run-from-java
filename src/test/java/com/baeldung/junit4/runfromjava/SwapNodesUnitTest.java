@@ -8,13 +8,9 @@ import com.baeldung.junit.runfromjava.listnode.SwapNodes;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-public class SwapNodesUnitTest  {
+public class SwapNodesUnitTest {
     private SwapNodes swapNodes;
     private ListNode listNode;
-
-    public SwapNodesUnitTest() {
-    }
-
 
     @Before
     public void setUp() throws Exception {
@@ -23,7 +19,7 @@ public class SwapNodesUnitTest  {
     }
 
     @Test
-    public void testwhenSwappingPairs_thenReturnExpectedList() {
+    public void whenSwappingPairs_thenReturnExpectedList() {
         assertEquals(swapNodes.swapPairs(listNode)
             .toString(), "666->42->3->15");
     }

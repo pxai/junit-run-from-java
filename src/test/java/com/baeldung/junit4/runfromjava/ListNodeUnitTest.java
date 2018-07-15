@@ -9,9 +9,6 @@ import static org.junit.Assert.*;
 
 public class ListNodeUnitTest  {
 
-    public ListNodeUnitTest() {
-    }
-
     @Test
     public void whenListHasOneElement_thenGetExpectedValue() {
         ListNode listNode = new ListNode(42);

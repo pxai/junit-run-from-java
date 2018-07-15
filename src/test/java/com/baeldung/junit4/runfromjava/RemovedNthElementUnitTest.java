@@ -20,13 +20,13 @@ public class RemovedNthElementUnitTest  {
     }
 
     @Test
-    public void testwhenRemovingSecondElement_thenReturnExpectedList() {
+    public void whenRemovingSecondElement_thenReturnExpectedList() {
         assertEquals(removedNthElement.removeNthFromEnd(listNode, 2)
             .toString(), "42->666->3");
     }
 
     @Test
-    public void testwhenRemovingThirdElement_thenReturnExpectedList() {
+    public void whenRemovingThirdElement_thenReturnExpectedList() {
         assertEquals(removedNthElement.removeNthFromEnd(listNode, 3)
             .toString(), "42->15->3");
     }
