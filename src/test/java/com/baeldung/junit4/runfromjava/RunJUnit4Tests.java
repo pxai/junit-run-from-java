@@ -7,17 +7,20 @@ import static org.junit.extensions.cpsuite.SuiteType.*;
 import junit.framework.TestSuite;
 
 import org.junit.extensions.cpsuite.ClasspathSuite.SuiteTypes;
+import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.RunWith;
 import org.junit.runner.notification.Failure;
 
-@RunWith(ClasspathSuite.class)
-@SuiteTypes({ TEST_CLASSES })
+
 public class RunJUnit4Tests {
 
     public static void runOne() {
-        junit.textui.TestRunner.run(new TestSuite(MergeListsUnitTest.class));
+        JUnitCore junit = new JUnitCore();
+        junit.addListener(new TextListener(System.out));
+        junit.run(MergeListsUnitTest.class);
+        //junit.textui.TestRunner.run(new TestSuite(MergeListsUnitTest.class));
     }
 
     public static void runAllClasses() {
@@ -68,16 +71,16 @@ public class RunJUnit4Tests {
         runOne();
 
         System.out.println("\nRunning all test classes:");
-        runAllClasses();
+       // runAllClasses();
 
         System.out.println("\nRunning a suite of test classes:");
-        runSuiteOfClasses();
+        //runSuiteOfClasses();
 
         System.out.println("\nRunning repeated tests:");
-        runRepeated();
+        //runRepeated();
 
         System.out.println("\nRunning repeated tests on specific test methods:");
-        runRepeatedSuiteMethod();
+        //runRepeatedSuiteMethod();
 
     }
 
